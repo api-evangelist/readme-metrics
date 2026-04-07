@@ -10,11 +10,11 @@ image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - API Analytics
   - API Documentation
-  - Developer Experience
-  - Developer Hubs
   - API Logs
   - API Metrics
   - API Usage
+  - Developer Experience
+  - Developer Hubs
 url: >-
   https://raw.githubusercontent.com/api-evangelist/readme-metrics/refs/heads/main/apis.yml
 created: '2026-03-26'
@@ -31,10 +31,10 @@ apis:
       data.
     humanURL: https://docs.readme.com/main/reference/intro-to-the-readme-api
     tags:
-      - API Documentation
       - API Analytics
-      - Developer Hubs
+      - API Documentation
       - API Management
+      - Developer Hubs
     properties:
       - type: Documentation
         url: https://docs.readme.com/main/reference/intro-to-the-readme-api
@@ -54,8 +54,8 @@ apis:
     humanURL: https://readme.com/metrics
     tags:
       - API Analytics
-      - API Metrics
       - API Logs
+      - API Metrics
       - API Usage
     properties:
       - type: Documentation
