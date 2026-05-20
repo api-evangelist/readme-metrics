@@ -63,6 +63,8 @@ apis:
       - type: GettingStarted
         url: https://docs.readme.com/main/docs/getting-started-with-metrics
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/readme
   - type: Website
     url: https://readme.com
   - type: Documentation
