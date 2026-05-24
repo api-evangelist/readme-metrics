@@ -87,6 +87,8 @@ common:
     url: https://docs.readme.com/main/changelog
   - type: SDKs
     url: https://docs.readme.com/main/docs/metrics-sdks
+  - type: LLMsTxt
+    url: https://docs.readme.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
