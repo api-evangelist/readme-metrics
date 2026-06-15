@@ -1,0 +1,147 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ReadMe API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "List API specifications",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://dash.readme.com/api/v1/api-specification",
+        "headers": [
+          {
+            "name": "x-readme-version",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "perPage",
+            "value": "",
+            "type": "query",
+            "description": "Items per page (max 100)."
+          },
+          {
+            "name": "page",
+            "value": "",
+            "type": "query",
+            "description": "Page number (1-based)."
+          }
+        ]
+      },
+      "docs": "List API specifications"
+    },
+    {
+      "info": {
+        "name": "Upload an API specification",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://dash.readme.com/api/v1/api-specification",
+        "headers": [
+          {
+            "name": "x-readme-version",
+            "value": ""
+          }
+        ],
+        "body": {
+          "type": "multipart-form",
+          "data": [
+            {
+              "name": "spec",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "url",
+              "type": "text",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "docs": "Upload an API specification"
+    },
+    {
+      "info": {
+        "name": "Get an API registry entry",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://dash.readme.com/api/v1/api-registry/:uuid",
+        "params": [
+          {
+            "name": "uuid",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get an API registry entry"
+    },
+    {
+      "info": {
+        "name": "List changelogs",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://dash.readme.com/api/v1/changelogs",
+        "params": [
+          {
+            "name": "perPage",
+            "value": "",
+            "type": "query",
+            "description": "Items per page (max 100)."
+          },
+          {
+            "name": "page",
+            "value": "",
+            "type": "query",
+            "description": "Page number (1-based)."
+          }
+        ]
+      },
+      "docs": "List changelogs"
+    },
+    {
+      "info": {
+        "name": "Get a documentation page",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://dash.readme.com/api/v1/docs/:slug",
+        "headers": [
+          {
+            "name": "x-readme-version",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "slug",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get a documentation page"
+    }
+  ],
+  "bundled": true
+}
