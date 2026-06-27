@@ -75,7 +75,7 @@ common:
     url: https://readme.com/pricing
   - type: Login
     url: https://dash.readme.com/login
-  - type: SignUp
+  - type: Signup
     url: https://dash.readme.com/signup
   - type: Support
     url: https://docs.readme.com/main/docs/support
@@ -87,7 +87,7 @@ common:
     url: https://docs.readme.com/main/changelog
   - type: SDKs
     url: https://docs.readme.com/main/docs/metrics-sdks
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://docs.readme.com/llms.txt
 maintainers:
   - FN: Kin Lane
