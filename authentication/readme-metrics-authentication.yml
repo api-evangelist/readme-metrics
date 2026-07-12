@@ -1,0 +1,13 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/readme-metrics-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: ReadMe API key supplied as the HTTP Basic username (password empty).
+  sources:
+  - openapi/readme-metrics-openapi.yml

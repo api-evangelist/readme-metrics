@@ -63,6 +63,10 @@ apis:
       - type: GettingStarted
         url: https://docs.readme.com/main/docs/getting-started-with-metrics
 common:
+  - type: DomainSecurity
+    url: security/readme-metrics-domain-security.yml
+  - type: Authentication
+    url: authentication/readme-metrics-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/readme
   - type: Website
