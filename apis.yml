@@ -63,6 +63,8 @@ apis:
       - type: GettingStarted
         url: https://docs.readme.com/main/docs/getting-started-with-metrics
 common:
+  - type: AgenticAccess
+    url: agentic-access/readme-metrics-agentic-access.yml
   - type: DomainSecurity
     url: security/readme-metrics-domain-security.yml
   - type: Authentication
