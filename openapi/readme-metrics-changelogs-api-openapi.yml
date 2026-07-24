@@ -1,0 +1,97 @@
+openapi: 3.1.0
+info:
+  title: ReadMe Api Registry Changelogs API
+  description: 'REST API for ReadMe''s developer hub platform — manage API specifications,
+
+    documentation pages, changelogs, custom pages, categories, and API registry
+
+    entries. Authenticated with HTTP Basic auth using a ReadMe API key as the
+
+    username (empty password).
+
+    '
+  version: 1.0.0
+  contact:
+    name: ReadMe
+    url: https://docs.readme.com/main/reference/intro-to-the-readme-api
+servers:
+- url: https://dash.readme.com/api/v1
+  description: ReadMe production API
+security:
+- basicAuth: []
+tags:
+- name: Changelogs
+paths:
+  /changelogs:
+    get:
+      summary: List changelogs
+      operationId: getChangelogs
+      parameters:
+      - $ref: '#/components/parameters/perPage'
+      - $ref: '#/components/parameters/page'
+      responses:
+        '200':
+          description: List of changelogs.
+          headers:
+            Link:
+              schema:
+                type: string
+            x-total-count:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Changelog'
+      tags:
+      - Changelogs
+components:
+  parameters:
+    perPage:
+      name: perPage
+      in: query
+      schema:
+        type: integer
+        default: 10
+        minimum: 1
+        maximum: 100
+      description: Items per page (max 100).
+    page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+        minimum: 1
+      description: Page number (1-based).
+  schemas:
+    Changelog:
+      type: object
+      properties:
+        _id:
+          type: string
+        metadata:
+          type: object
+        title:
+          type: string
+        slug:
+          type: string
+        body:
+          type: string
+        type:
+          type: string
+        hidden:
+          type: boolean
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: ReadMe API key supplied as the HTTP Basic username (password empty).

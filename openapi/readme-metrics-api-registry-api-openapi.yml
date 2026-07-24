@@ -1,0 +1,76 @@
+openapi: 3.1.0
+info:
+  title: ReadMe Api Registry API
+  description: 'REST API for ReadMe''s developer hub platform — manage API specifications,
+
+    documentation pages, changelogs, custom pages, categories, and API registry
+
+    entries. Authenticated with HTTP Basic auth using a ReadMe API key as the
+
+    username (empty password).
+
+    '
+  version: 1.0.0
+  contact:
+    name: ReadMe
+    url: https://docs.readme.com/main/reference/intro-to-the-readme-api
+servers:
+- url: https://dash.readme.com/api/v1
+  description: ReadMe production API
+security:
+- basicAuth: []
+tags:
+- name: Api Registry
+paths:
+  /api-registry/{uuid}:
+    get:
+      summary: Get an API registry entry
+      operationId: getAPIRegistry
+      parameters:
+      - name: uuid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Registry entry.
+          content:
+            application/json:
+              schema:
+                type: object
+        '404':
+          $ref: '#/components/responses/NotFound'
+      tags:
+      - Api Registry
+components:
+  responses:
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
+        suggestion:
+          type: string
+        docs:
+          type: string
+        help:
+          type: string
+        poem:
+          type: array
+          items:
+            type: string
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: ReadMe API key supplied as the HTTP Basic username (password empty).

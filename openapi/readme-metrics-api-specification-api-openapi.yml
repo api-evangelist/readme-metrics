@@ -1,29 +1,35 @@
 openapi: 3.1.0
 info:
-  title: ReadMe API
-  description: |
-    REST API for ReadMe's developer hub platform — manage API specifications,
+  title: ReadMe Api Registry Api Specification API
+  description: 'REST API for ReadMe''s developer hub platform — manage API specifications,
+
     documentation pages, changelogs, custom pages, categories, and API registry
+
     entries. Authenticated with HTTP Basic auth using a ReadMe API key as the
+
     username (empty password).
-  version: "1.0.0"
+
+    '
+  version: 1.0.0
   contact:
     name: ReadMe
     url: https://docs.readme.com/main/reference/intro-to-the-readme-api
 servers:
-  - url: https://dash.readme.com/api/v1
-    description: ReadMe production API
+- url: https://dash.readme.com/api/v1
+  description: ReadMe production API
 security:
-  - basicAuth: []
+- basicAuth: []
+tags:
+- name: Api Specification
 paths:
   /api-specification:
     get:
       summary: List API specifications
       operationId: getAPISpecifications
       parameters:
-        - $ref: '#/components/parameters/perPage'
-        - $ref: '#/components/parameters/page'
-        - $ref: '#/components/parameters/readmeVersion'
+      - $ref: '#/components/parameters/perPage'
+      - $ref: '#/components/parameters/page'
+      - $ref: '#/components/parameters/readmeVersion'
       responses:
         '200':
           description: List of API specifications.
@@ -46,11 +52,13 @@ paths:
           $ref: '#/components/responses/Forbidden'
         '404':
           $ref: '#/components/responses/NotFound'
+      tags:
+      - Api Specification
     post:
       summary: Upload an API specification
       operationId: uploadAPISpecification
       parameters:
-        - $ref: '#/components/parameters/readmeVersion'
+      - $ref: '#/components/parameters/readmeVersion'
       requestBody:
         required: true
         content:
@@ -76,87 +84,10 @@ paths:
           $ref: '#/components/responses/Forbidden'
         '408':
           $ref: '#/components/responses/Error'
-  /api-registry/{uuid}:
-    get:
-      summary: Get an API registry entry
-      operationId: getAPIRegistry
-      parameters:
-        - name: uuid
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Registry entry.
-          content:
-            application/json:
-              schema:
-                type: object
-        '404':
-          $ref: '#/components/responses/NotFound'
-  /changelogs:
-    get:
-      summary: List changelogs
-      operationId: getChangelogs
-      parameters:
-        - $ref: '#/components/parameters/perPage'
-        - $ref: '#/components/parameters/page'
-      responses:
-        '200':
-          description: List of changelogs.
-          headers:
-            Link:
-              schema:
-                type: string
-            x-total-count:
-              schema:
-                type: string
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Changelog'
-  /docs/{slug}:
-    get:
-      summary: Get a documentation page
-      operationId: getDoc
-      parameters:
-        - name: slug
-          in: path
-          required: true
-          schema:
-            type: string
-        - $ref: '#/components/parameters/readmeVersion'
-      responses:
-        '200':
-          description: Documentation page.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Doc'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+      tags:
+      - Api Specification
 components:
-  securitySchemes:
-    basicAuth:
-      type: http
-      scheme: basic
-      description: ReadMe API key supplied as the HTTP Basic username (password empty).
   parameters:
-    page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
-        minimum: 1
-      description: Page number (1-based).
     perPage:
       name: perPage
       in: query
@@ -173,19 +104,15 @@ components:
       schema:
         type: string
       description: Version identifier for the docs project (e.g. v3.0).
+    page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+        minimum: 1
+      description: Page number (1-based).
   responses:
-    BadRequest:
-      description: Validation error.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Missing or invalid API key.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
     Forbidden:
       description: API key mismatch or insufficient permissions.
       content:
@@ -200,6 +127,18 @@ components:
             $ref: '#/components/schemas/Error'
     Error:
       description: Error response.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Missing or invalid API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: Validation error.
       content:
         application/json:
           schema:
@@ -228,54 +167,6 @@ components:
               type: string
             slug:
               type: string
-    Changelog:
-      type: object
-      properties:
-        _id:
-          type: string
-        metadata:
-          type: object
-        title:
-          type: string
-        slug:
-          type: string
-        body:
-          type: string
-        type:
-          type: string
-        hidden:
-          type: boolean
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type: string
-          format: date-time
-    Doc:
-      type: object
-      properties:
-        _id:
-          type: string
-        title:
-          type: string
-        slug:
-          type: string
-        body:
-          type: string
-        category:
-          type: string
-        version:
-          type: string
-        hidden:
-          type: boolean
-        type:
-          type: string
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type: string
-          format: date-time
     Error:
       type: object
       properties:
@@ -293,3 +184,8 @@ components:
           type: array
           items:
             type: string
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: ReadMe API key supplied as the HTTP Basic username (password empty).
