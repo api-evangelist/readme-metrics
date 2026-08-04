@@ -1,0 +1,20 @@
+{
+  "provider": "readme-metrics",
+  "sources": [
+    "readme-metrics-api-registry-api-openapi.yml",
+    "readme-metrics-api-specification-api-openapi.yml",
+    "readme-metrics-changelogs-api-openapi.yml",
+    "readme-metrics-docs-api-openapi.yml"
+  ],
+  "outputs": [
+    "readme-metrics-api-registry-api-openapi.yml",
+    "readme-metrics-api-specification-api-openapi.yml",
+    "readme-metrics-changelogs-api-openapi.yml",
+    "readme-metrics-docs-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

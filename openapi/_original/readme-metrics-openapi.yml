@@ -1,0 +1,295 @@
+openapi: 3.1.0
+info:
+  title: ReadMe API
+  description: |
+    REST API for ReadMe's developer hub platform — manage API specifications,
+    documentation pages, changelogs, custom pages, categories, and API registry
+    entries. Authenticated with HTTP Basic auth using a ReadMe API key as the
+    username (empty password).
+  version: "1.0.0"
+  contact:
+    name: ReadMe
+    url: https://docs.readme.com/main/reference/intro-to-the-readme-api
+servers:
+  - url: https://dash.readme.com/api/v1
+    description: ReadMe production API
+security:
+  - basicAuth: []
+paths:
+  /api-specification:
+    get:
+      summary: List API specifications
+      operationId: getAPISpecifications
+      parameters:
+        - $ref: '#/components/parameters/perPage'
+        - $ref: '#/components/parameters/page'
+        - $ref: '#/components/parameters/readmeVersion'
+      responses:
+        '200':
+          description: List of API specifications.
+          headers:
+            Link:
+              schema:
+                type: string
+            x-total-count:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/APISpecification'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    post:
+      summary: Upload an API specification
+      operationId: uploadAPISpecification
+      parameters:
+        - $ref: '#/components/parameters/readmeVersion'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                spec:
+                  type: string
+                  format: binary
+                  description: OpenAPI / Swagger file (JSON or YAML).
+                url:
+                  type: string
+                  description: Public URL pointing to an OpenAPI / Swagger definition.
+      responses:
+        '201':
+          description: API specification uploaded.
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '408':
+          $ref: '#/components/responses/Error'
+  /api-registry/{uuid}:
+    get:
+      summary: Get an API registry entry
+      operationId: getAPIRegistry
+      parameters:
+        - name: uuid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Registry entry.
+          content:
+            application/json:
+              schema:
+                type: object
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /changelogs:
+    get:
+      summary: List changelogs
+      operationId: getChangelogs
+      parameters:
+        - $ref: '#/components/parameters/perPage'
+        - $ref: '#/components/parameters/page'
+      responses:
+        '200':
+          description: List of changelogs.
+          headers:
+            Link:
+              schema:
+                type: string
+            x-total-count:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Changelog'
+  /docs/{slug}:
+    get:
+      summary: Get a documentation page
+      operationId: getDoc
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+        - $ref: '#/components/parameters/readmeVersion'
+      responses:
+        '200':
+          description: Documentation page.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Doc'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: ReadMe API key supplied as the HTTP Basic username (password empty).
+  parameters:
+    page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+        minimum: 1
+      description: Page number (1-based).
+    perPage:
+      name: perPage
+      in: query
+      schema:
+        type: integer
+        default: 10
+        minimum: 1
+        maximum: 100
+      description: Items per page (max 100).
+    readmeVersion:
+      name: x-readme-version
+      in: header
+      required: false
+      schema:
+        type: string
+      description: Version identifier for the docs project (e.g. v3.0).
+  responses:
+    BadRequest:
+      description: Validation error.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Missing or invalid API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Forbidden:
+      description: API key mismatch or insufficient permissions.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Error:
+      description: Error response.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    APISpecification:
+      type: object
+      properties:
+        _id:
+          type: string
+        title:
+          type: string
+        lastSynced:
+          type: string
+          format: date-time
+        source:
+          type: string
+        type:
+          type: string
+        version:
+          type: string
+        category:
+          type: object
+          properties:
+            title:
+              type: string
+            slug:
+              type: string
+    Changelog:
+      type: object
+      properties:
+        _id:
+          type: string
+        metadata:
+          type: object
+        title:
+          type: string
+        slug:
+          type: string
+        body:
+          type: string
+        type:
+          type: string
+        hidden:
+          type: boolean
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+    Doc:
+      type: object
+      properties:
+        _id:
+          type: string
+        title:
+          type: string
+        slug:
+          type: string
+        body:
+          type: string
+        category:
+          type: string
+        version:
+          type: string
+        hidden:
+          type: boolean
+        type:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
+        suggestion:
+          type: string
+        docs:
+          type: string
+        help:
+          type: string
+        poem:
+          type: array
+          items:
+            type: string
