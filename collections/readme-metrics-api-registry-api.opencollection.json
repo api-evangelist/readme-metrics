@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ReadMe Api Registry API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Api Registry",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get an API registry entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dash.readme.com/api/v1/api-registry/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get an API registry entry"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

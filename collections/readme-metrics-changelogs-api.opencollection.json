@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ReadMe Api Registry Changelogs API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Changelogs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List changelogs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dash.readme.com/api/v1/changelogs",
+            "params": [
+              {
+                "name": "perPage",
+                "value": "",
+                "type": "query",
+                "description": "Items per page (max 100)."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number (1-based)."
+              }
+            ]
+          },
+          "docs": "List changelogs"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

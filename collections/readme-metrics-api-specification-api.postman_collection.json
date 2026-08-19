@@ -1,0 +1,749 @@
+{
+  "item": [
+    {
+      "id": "d33a304d-c873-4e0b-9c31-1ed13039097b",
+      "name": "Api Specification",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "50502840-6b4f-4108-aa78-e287f0475fe7",
+          "name": "List API specifications",
+          "request": {
+            "name": "List API specifications",
+            "description": {},
+            "url": {
+              "path": [
+                "api-specification"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "perPage",
+                  "value": "10",
+                  "description": "Items per page (max 100)."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number (1-based)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Version identifier for the docs project (e.g. v3.0).",
+                "key": "x-readme-version",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "46809d44-e704-4ac7-bcef-34cc6340bceb",
+              "name": "List of API specifications.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-specification"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Version identifier for the docs project (e.g. v3.0).",
+                    "key": "x-readme-version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Link",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-total-count",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"_id\": \"string\",\n    \"title\": \"string\",\n    \"lastSynced\": \"2005-09-04T21:45:27.848Z\",\n    \"source\": \"string\",\n    \"type\": \"string\",\n    \"version\": \"string\",\n    \"category\": {\n      \"title\": \"string\",\n      \"slug\": \"string\"\n    }\n  },\n  {\n    \"_id\": \"string\",\n    \"title\": \"string\",\n    \"lastSynced\": \"2021-02-20T09:16:26.440Z\",\n    \"source\": \"string\",\n    \"type\": \"string\",\n    \"version\": \"string\",\n    \"category\": {\n      \"title\": \"string\",\n      \"slug\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5cfb9ad5-a70e-4719-a0da-ee8cc3df36a7",
+              "name": "Missing or invalid API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-specification"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Version identifier for the docs project (e.g. v3.0).",
+                    "key": "x-readme-version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"message\": \"string\",\n  \"suggestion\": \"string\",\n  \"docs\": \"string\",\n  \"help\": \"string\",\n  \"poem\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2914fb4f-8c4e-47bb-a71b-52a22085199a",
+              "name": "API key mismatch or insufficient permissions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-specification"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Version identifier for the docs project (e.g. v3.0).",
+                    "key": "x-readme-version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"message\": \"string\",\n  \"suggestion\": \"string\",\n  \"docs\": \"string\",\n  \"help\": \"string\",\n  \"poem\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "de0235af-815c-4c7a-b531-d3fb21bc251e",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-specification"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Version identifier for the docs project (e.g. v3.0).",
+                    "key": "x-readme-version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"message\": \"string\",\n  \"suggestion\": \"string\",\n  \"docs\": \"string\",\n  \"help\": \"string\",\n  \"poem\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f846546a-a4d8-4a10-bb7c-e2ec344a4e56",
+          "name": "Upload an API specification",
+          "request": {
+            "name": "Upload an API specification",
+            "description": {},
+            "url": {
+              "path": [
+                "api-specification"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Version identifier for the docs project (e.g. v3.0).",
+                "key": "x-readme-version",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "spec",
+                  "type": "file",
+                  "description": "OpenAPI / Swagger file (JSON or YAML)."
+                },
+                {
+                  "key": "url",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "Public URL pointing to an OpenAPI / Swagger definition."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d56ad281-cf6a-4b37-b155-0cfd1090fd4f",
+              "name": "API specification uploaded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-specification"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Version identifier for the docs project (e.g. v3.0).",
+                    "key": "x-readme-version",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "OpenAPI / Swagger file (JSON or YAML).",
+                        "type": "text/plain"
+                      },
+                      "key": "spec",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Public URL pointing to an OpenAPI / Swagger definition.",
+                        "type": "text/plain"
+                      },
+                      "key": "url",
+                      "value": "<string>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ff370d8e-15d2-42e6-a3cd-4e53baf70205",
+              "name": "Validation error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-specification"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Version identifier for the docs project (e.g. v3.0).",
+                    "key": "x-readme-version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "OpenAPI / Swagger file (JSON or YAML).",
+                        "type": "text/plain"
+                      },
+                      "key": "spec",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Public URL pointing to an OpenAPI / Swagger definition.",
+                        "type": "text/plain"
+                      },
+                      "key": "url",
+                      "value": "<string>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"message\": \"string\",\n  \"suggestion\": \"string\",\n  \"docs\": \"string\",\n  \"help\": \"string\",\n  \"poem\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "21ccd233-2220-46f5-82f3-cb5e8c7fc68a",
+              "name": "Missing or invalid API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-specification"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Version identifier for the docs project (e.g. v3.0).",
+                    "key": "x-readme-version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "OpenAPI / Swagger file (JSON or YAML).",
+                        "type": "text/plain"
+                      },
+                      "key": "spec",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Public URL pointing to an OpenAPI / Swagger definition.",
+                        "type": "text/plain"
+                      },
+                      "key": "url",
+                      "value": "<string>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"message\": \"string\",\n  \"suggestion\": \"string\",\n  \"docs\": \"string\",\n  \"help\": \"string\",\n  \"poem\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c17a1f7a-cac6-42ef-bbc6-461a4781dd1a",
+              "name": "API key mismatch or insufficient permissions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-specification"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Version identifier for the docs project (e.g. v3.0).",
+                    "key": "x-readme-version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "OpenAPI / Swagger file (JSON or YAML).",
+                        "type": "text/plain"
+                      },
+                      "key": "spec",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Public URL pointing to an OpenAPI / Swagger definition.",
+                        "type": "text/plain"
+                      },
+                      "key": "url",
+                      "value": "<string>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"message\": \"string\",\n  \"suggestion\": \"string\",\n  \"docs\": \"string\",\n  \"help\": \"string\",\n  \"poem\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f53fde1b-5eb1-44ba-82b7-8abdf1d8d5a7",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-specification"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Version identifier for the docs project (e.g. v3.0).",
+                    "key": "x-readme-version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "OpenAPI / Swagger file (JSON or YAML).",
+                        "type": "text/plain"
+                      },
+                      "key": "spec",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Public URL pointing to an OpenAPI / Swagger definition.",
+                        "type": "text/plain"
+                      },
+                      "key": "url",
+                      "value": "<string>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"message\": \"string\",\n  \"suggestion\": \"string\",\n  \"docs\": \"string\",\n  \"help\": \"string\",\n  \"poem\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dash.readme.com/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2d9203e2-224c-4845-a9a5-f441d6095264",
+    "name": "ReadMe Api Registry Api Specification API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for ReadMe's developer hub platform — manage API specifications,\ndocumentation pages, changelogs, custom pages, categories, and API registry\nentries. Authenticated with HTTP Basic auth using a ReadMe API key as the\nusername (empty password).\n\n\nContact Support:\n Name: ReadMe",
+      "type": "text/plain"
+    }
+  }
+}

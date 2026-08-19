@@ -1,0 +1,154 @@
+{
+  "item": [
+    {
+      "id": "1610de6c-0829-4f5e-9bed-81b39369cbf6",
+      "name": "Changelogs",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bc241aa8-9a30-442d-902d-b3726d7f62b9",
+          "name": "List changelogs",
+          "request": {
+            "name": "List changelogs",
+            "description": {},
+            "url": {
+              "path": [
+                "changelogs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "perPage",
+                  "value": "10",
+                  "description": "Items per page (max 100)."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number (1-based)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "80e6f465-0fcd-47d1-8697-842b5a22ebd8",
+              "name": "List of changelogs.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "changelogs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Link",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-total-count",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"_id\": \"string\",\n    \"metadata\": {},\n    \"title\": \"string\",\n    \"slug\": \"string\",\n    \"body\": \"string\",\n    \"type\": \"string\",\n    \"hidden\": false,\n    \"createdAt\": \"1987-08-04T10:23:56.348Z\",\n    \"updatedAt\": \"1999-01-02T15:40:07.285Z\"\n  },\n  {\n    \"_id\": \"string\",\n    \"metadata\": {},\n    \"title\": \"string\",\n    \"slug\": \"string\",\n    \"body\": \"string\",\n    \"type\": \"string\",\n    \"hidden\": false,\n    \"createdAt\": \"2010-10-15T07:57:34.733Z\",\n    \"updatedAt\": \"2008-09-24T09:31:25.331Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dash.readme.com/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f551c0d4-0a61-4f9d-848e-1325597241b4",
+    "name": "ReadMe Api Registry Changelogs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for ReadMe's developer hub platform — manage API specifications,\ndocumentation pages, changelogs, custom pages, categories, and API registry\nentries. Authenticated with HTTP Basic auth using a ReadMe API key as the\nusername (empty password).\n\n\nContact Support:\n Name: ReadMe",
+      "type": "text/plain"
+    }
+  }
+}
