@@ -56,6 +56,8 @@ apis:
   description: The Api Registry API from ReadMe Metrics — 1 operation(s) for api registry.
   humanURL: https://docs.readme.com/main/reference/intro-to-the-readme-api
   tags:
+  - API Registry
+  tags_raw:
   - Api Registry
   properties:
   - type: OpenAPI
@@ -71,6 +73,8 @@ apis:
   description: The Api Specification API from ReadMe Metrics — 1 operation(s) for api specification.
   humanURL: https://docs.readme.com/main/reference/intro-to-the-readme-api
   tags:
+  - API Specification
+  tags_raw:
   - Api Specification
   properties:
   - type: OpenAPI
