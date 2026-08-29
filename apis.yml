@@ -6,6 +6,18 @@ description: >-
   developer experience. ReadMe Metrics captures and analyzes API request logs to
   provide insights into how developers are using your APIs.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
