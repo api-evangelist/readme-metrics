@@ -103,6 +103,8 @@ apis:
   description: The Changelogs API from ReadMe Metrics — 1 operation(s) for changelogs.
   humanURL: https://docs.readme.com/main/reference/intro-to-the-readme-api
   tags:
+  - Changelog
+  tags_raw:
   - Changelogs
   properties:
   - type: OpenAPI
