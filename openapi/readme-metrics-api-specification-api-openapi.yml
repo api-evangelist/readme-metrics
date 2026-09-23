@@ -1,15 +1,13 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: ReadMe Api Registry Api Specification API
+  title: ReadMe Api Specification API
   description: 'REST API for ReadMe''s developer hub platform — manage API specifications,
 
     documentation pages, changelogs, custom pages, categories, and API registry
 
     entries. Authenticated with HTTP Basic auth using a ReadMe API key as the
 
-    username (empty password).
-
-    '
+    username (empty password).'
   version: 1.0.0
   contact:
     name: ReadMe
@@ -20,7 +18,7 @@ servers:
 security:
 - basicAuth: []
 tags:
-- name: Api Specification
+- name: API Specification
 paths:
   /api-specification:
     get:
@@ -53,7 +51,7 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
       tags:
-      - Api Specification
+      - API Specification
     post:
       summary: Upload an API specification
       operationId: uploadAPISpecification
@@ -85,42 +83,11 @@ paths:
         '408':
           $ref: '#/components/responses/Error'
       tags:
-      - Api Specification
+      - API Specification
 components:
-  parameters:
-    perPage:
-      name: perPage
-      in: query
-      schema:
-        type: integer
-        default: 10
-        minimum: 1
-        maximum: 100
-      description: Items per page (max 100).
-    readmeVersion:
-      name: x-readme-version
-      in: header
-      required: false
-      schema:
-        type: string
-      description: Version identifier for the docs project (e.g. v3.0).
-    page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
-        minimum: 1
-      description: Page number (1-based).
   responses:
-    Forbidden:
-      description: API key mismatch or insufficient permissions.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    NotFound:
-      description: Resource not found.
+    BadRequest:
+      description: Validation error.
       content:
         application/json:
           schema:
@@ -131,18 +98,49 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
     Unauthorized:
       description: Missing or invalid API key.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: Validation error.
+    Forbidden:
+      description: API key mismatch or insufficient permissions.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
+  parameters:
+    perPage:
+      name: perPage
+      in: query
+      schema:
+        type: integer
+        default: 10
+        minimum: 1
+        maximum: 100
+      description: Items per page (max 100).
+    page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+        minimum: 1
+      description: Page number (1-based).
+    readmeVersion:
+      name: x-readme-version
+      in: header
+      required: false
+      schema:
+        type: string
+      description: Version identifier for the docs project (e.g. v3.0).
   schemas:
     APISpecification:
       type: object

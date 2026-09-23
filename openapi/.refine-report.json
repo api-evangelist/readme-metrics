@@ -1,10 +1,7 @@
 {
   "provider": "readme-metrics",
   "sources": [
-    "readme-metrics-api-registry-api-openapi.yml",
-    "readme-metrics-api-specification-api-openapi.yml",
-    "readme-metrics-changelogs-api-openapi.yml",
-    "readme-metrics-docs-api-openapi.yml"
+    "_original/readme-metrics-openapi.yml"
   ],
   "outputs": [
     "readme-metrics-api-registry-api-openapi.yml",
@@ -15,6 +12,24 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "readme-metrics-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "readme-metrics-openapi.yml: tagged paths GET /api-specification -> Api Specification",
+    "readme-metrics-openapi.yml: tagged paths POST /api-specification -> Api Specification",
+    "readme-metrics-openapi.yml: tagged paths GET /api-registry/{uuid} -> Api Registry",
+    "readme-metrics-openapi.yml: tagged paths GET /changelogs -> Changelogs",
+    "readme-metrics-openapi.yml: tagged paths GET /docs/{slug} -> Docs",
+    "readme-metrics-openapi.yml: declared missing tag: Api Registry",
+    "readme-metrics-openapi.yml: declared missing tag: Api Specification",
+    "readme-metrics-openapi.yml: declared missing tag: Changelogs",
+    "readme-metrics-openapi.yml: declared missing tag: Docs",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "readme-metrics-api-registry-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "readme-metrics-api-specification-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "readme-metrics-changelogs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "readme-metrics-docs-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

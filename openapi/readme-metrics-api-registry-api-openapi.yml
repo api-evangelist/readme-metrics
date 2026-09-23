@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: ReadMe Api Registry API
   description: 'REST API for ReadMe''s developer hub platform — manage API specifications,
@@ -7,9 +7,7 @@ info:
 
     entries. Authenticated with HTTP Basic auth using a ReadMe API key as the
 
-    username (empty password).
-
-    '
+    username (empty password).'
   version: 1.0.0
   contact:
     name: ReadMe
