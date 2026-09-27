@@ -98,8 +98,8 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    NotFound:
-      description: Resource not found.
+    Forbidden:
+      description: API key mismatch or insufficient permissions.
       content:
         application/json:
           schema:
@@ -110,13 +110,20 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    Forbidden:
-      description: API key mismatch or insufficient permissions.
+    NotFound:
+      description: Resource not found.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
   parameters:
+    readmeVersion:
+      name: x-readme-version
+      in: header
+      required: false
+      schema:
+        type: string
+      description: Version identifier for the docs project (e.g. v3.0).
     perPage:
       name: perPage
       in: query
@@ -134,14 +141,24 @@ components:
         default: 1
         minimum: 1
       description: Page number (1-based).
-    readmeVersion:
-      name: x-readme-version
-      in: header
-      required: false
-      schema:
-        type: string
-      description: Version identifier for the docs project (e.g. v3.0).
   schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
+        suggestion:
+          type: string
+        docs:
+          type: string
+        help:
+          type: string
+        poem:
+          type: array
+          items:
+            type: string
     APISpecification:
       type: object
       properties:
@@ -165,23 +182,6 @@ components:
               type: string
             slug:
               type: string
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-        message:
-          type: string
-        suggestion:
-          type: string
-        docs:
-          type: string
-        help:
-          type: string
-        poem:
-          type: array
-          items:
-            type: string
   securitySchemes:
     basicAuth:
       type: http
