@@ -47,33 +47,6 @@ paths:
       tags:
       - Docs
 components:
-  parameters:
-    readmeVersion:
-      name: x-readme-version
-      in: header
-      required: false
-      schema:
-        type: string
-      description: Version identifier for the docs project (e.g. v3.0).
-  responses:
-    Forbidden:
-      description: API key mismatch or insufficient permissions.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Missing or invalid API key.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    NotFound:
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   schemas:
     Error:
       type: object
@@ -117,6 +90,33 @@ components:
         updatedAt:
           type: string
           format: date-time
+  responses:
+    Forbidden:
+      description: API key mismatch or insufficient permissions.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Missing or invalid API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  parameters:
+    readmeVersion:
+      name: x-readme-version
+      in: header
+      required: false
+      schema:
+        type: string
+      description: Version identifier for the docs project (e.g. v3.0).
   securitySchemes:
     basicAuth:
       type: http
