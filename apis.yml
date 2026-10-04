@@ -131,6 +131,9 @@ apis:
   - type: Authentication
     url: https://docs.readme.com/main/reference/intro-to-the-readme-api#authentication
 common:
+  - type: CapabilityMap
+    url: capabilities/readme-metrics-capability-edges.yml
+    name: ReadMe Metrics Business Capability Map
   - type: AgenticAccess
     url: agentic-access/readme-metrics-agentic-access.yml
   - type: DomainSecurity
