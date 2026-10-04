@@ -86,23 +86,6 @@ paths:
       - API Specification
 components:
   schemas:
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-        message:
-          type: string
-        suggestion:
-          type: string
-        docs:
-          type: string
-        help:
-          type: string
-        poem:
-          type: array
-          items:
-            type: string
     APISpecification:
       type: object
       properties:
@@ -126,21 +109,32 @@ components:
               type: string
             slug:
               type: string
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
+        suggestion:
+          type: string
+        docs:
+          type: string
+        help:
+          type: string
+        poem:
+          type: array
+          items:
+            type: string
   responses:
-    Forbidden:
-      description: API key mismatch or insufficient permissions.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Missing or invalid API key.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
     NotFound:
       description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: Validation error.
       content:
         application/json:
           schema:
@@ -151,8 +145,14 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: Validation error.
+    Unauthorized:
+      description: Missing or invalid API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Forbidden:
+      description: API key mismatch or insufficient permissions.
       content:
         application/json:
           schema:
