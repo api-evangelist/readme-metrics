@@ -2,14 +2,18 @@
   "repo": "readme-metrics",
   "feeds": [
     {
-      "source": "https://docs.readme.com",
-      "feed_url": "https://docs.readme.com",
+      "source": "https://readme.com/blog",
+      "feed_url": "https://readme.com/blog/feed.xml",
       "title": "",
       "saved": 0,
-      "method": "none"
+      "method": "discovered"
+    },
+    {
+      "source": "https://docs.readme.com",
+      "error": "HTTPError"
     }
   ],
-  "fetched": "2026-10-03T12:30:02Z",
+  "fetched": "2026-10-10T13:15:00Z",
   "post_count": 1,
   "agent_pulled": "2026-06-27",
   "feed_nature": "vendor-blog",
