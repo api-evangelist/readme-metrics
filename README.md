@@ -1,4 +1,4 @@
-# ReadMe Metrics (readme-metrics)
+# ReadMe Metrics
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,88 +66,125 @@
 
 ReadMe is an API documentation and developer hub platform that helps companies build interactive API documentation, track API usage analytics, and improve developer experience. ReadMe Metrics captures and analyzes API request logs to provide insights into how developers are using your APIs.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/readme-metrics/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/readme-metrics/refs/heads/main/apis.yml)
+**Areas:** API Analytics · API Documentation · API Logs · API Metrics · API Usage · Developer Experience · Developer Hubs
 
-## Scope
+## ReadMe Metrics on APIs.io
 
-- **Type:** Index
+Everything profiled for ReadMe Metrics is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/readme-metrics/](https://apis.io/providers/readme-metrics/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (5)
 
-- API Analytics
-- API Documentation
-- API Logs
-- API Metrics
-- API Usage
-- Developer Experience
-- Developer Hubs
+- [ReadMe Metrics](https://apis.io/apis/readme-metrics/readme-metrics/) — ReadMe Metrics captures and analyzes API request and response data to provide usage analytics, error tracking, and developer activity insights. It helps API…
+- [ReadMe Metrics Api Registry API](https://apis.io/apis/readme-metrics/readme-metrics-api-registry-api/) — The Api Registry API from ReadMe Metrics — 1 operation(s) for api registry.
+- [ReadMe Metrics Api Specification API](https://apis.io/apis/readme-metrics/readme-metrics-api-specification-api/) — The Api Specification API from ReadMe Metrics — 1 operation(s) for api specification.
+- [ReadMe Metrics Changelogs API](https://apis.io/apis/readme-metrics/readme-metrics-changelogs-api/) — The Changelogs API from ReadMe Metrics — 1 operation(s) for changelogs.
+- [ReadMe Metrics Docs API](https://apis.io/apis/readme-metrics/readme-metrics-docs-api/) — The Docs API from ReadMe Metrics — 1 operation(s) for docs.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-26
-- **Modified:** 2026-04-28
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### ReadMe API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The ReadMe API allows you to programmatically manage your ReadMe developer hub, including API definitions, documentation pages, changelogs, custom pages, categories, and API usage metrics. It provides endpoints for managing projects, uploading API specifications, and retrieving analytics data.
+- [Readme Metrics Agentic Access](https://apis.io/agentic-access/readme-metrics/readme-metrics-agentic-access/)
 
-- **Human URL:** [https://docs.readme.com/main/reference/intro-to-the-readme-api](https://docs.readme.com/main/reference/intro-to-the-readme-api)
+#### Collections (5)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- API Analytics
-- API Documentation
-- API Management
-- Developer Hubs
+- [ReadMe API](https://apis.io/collections/readme-metrics/open-readme-metrics/)
+- [ReadMe Api Registry API](https://apis.io/collections/readme-metrics/open-readme-metrics-api-registry-api/)
+- [ReadMe Api Registry Api Specification API](https://apis.io/collections/readme-metrics/open-readme-metrics-api-specification-api/)
+- [ReadMe Api Registry Changelogs API](https://apis.io/collections/readme-metrics/open-readme-metrics-changelogs-api/)
+- [ReadMe Api Registry Docs API](https://apis.io/collections/readme-metrics/open-readme-metrics-docs-api/)
 
-#### Properties
+#### Security (2)
 
-- [Documentation](https://docs.readme.com/main/reference/intro-to-the-readme-api)
-- [OpenAPI](https://spec.readme.com/openapi/6733983cabaf62002c7b16d9) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Getting Started](https://docs.readme.com/main/docs/getting-started)
-- [Authentication](https://docs.readme.com/main/reference/intro-to-the-readme-api#authentication)
-- [Postman Collection](collections/readme-metrics.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/readme-metrics.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### ReadMe Metrics
+- [Readme Metrics Authentication](https://apis.io/security/readme-metrics/readme-metrics-authentication/)
+- [Readme Metrics Domain Security](https://apis.io/security/readme-metrics/readme-metrics-domain-security/)
 
-ReadMe Metrics captures and analyzes API request and response data to provide usage analytics, error tracking, and developer activity insights. It helps API providers understand how their APIs are being consumed and identify issues in real time.
+#### Plans and pricing (1)
 
-- **Human URL:** [https://readme.com/metrics](https://readme.com/metrics)
+Published plans, tiers and prices.
 
-#### Tags
+- [Readme Metrics Plans Pricing](https://apis.io/plans/readme-metrics/readme-metrics-plans-pricing/)
 
-- API Analytics
-- API Logs
-- API Metrics
-- API Usage
+#### Rate limits (1)
 
-#### Properties
+Published request limits.
 
-- [Documentation](https://docs.readme.com/main/docs/api-metrics-in-readme)
-- [Getting Started](https://docs.readme.com/main/docs/getting-started-with-metrics)
-- [Postman Collection](collections/readme-metrics.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/readme-metrics.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Readme Metrics Rate Limits](https://apis.io/rate-limits/readme-metrics/readme-metrics-rate-limits/)
 
-## Common Properties
+#### FinOps (1)
 
-- [LinkedIn](https://www.linkedin.com/company/readme)
+What the API costs to run, by operation.
+
+- [Readme Metrics Finops](https://apis.io/finops/readme-metrics/readme-metrics-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://readme.com)
 - [Documentation](https://docs.readme.com)
-- [Blog](https://readme.com/blog)
 - [Pricing](https://readme.com/pricing)
-- [Login](https://dash.readme.com/login)
-- [Sign Up](https://dash.readme.com/signup)
 - [Support](https://docs.readme.com/main/docs/support)
-- [Git Hub](https://github.com/readmeio)
-- [Twitter](https://twitter.com/readme)
 - [Changelog](https://docs.readme.com/main/changelog)
-- [S D Ks](https://docs.readme.com/main/docs/metrics-sdks)
-- [L L Ms Txt](https://docs.readme.com/llms.txt)
+- [Blog](https://readme.com/blog)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 31.4** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 47.1 |
+| Contract governance | 0.0 |
+| Operational transparency | 21.1 |
+| Developer ergonomics | 33.3 |
+| Access clarity | 25.0 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/readme-metrics/](https://apis.io/providers/readme-metrics/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for ReadMe Metrics: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/readme-metrics/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
